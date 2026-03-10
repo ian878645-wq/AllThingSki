@@ -15,6 +15,22 @@ function changeBackground() {
     document.body.style.backgroundColor = document.body.style.backgroundColor === 'lightblue' ? '#f4f4f4' : 'lightblue';
 }
 
+// Filler functions for filter dropdowns
+function filterBySkill(value) {
+    console.log('Filtering by skill level: ' + value);
+    alert('Filtering results by skill level: ' + value);
+}
+
+function filterByLocation(value) {
+    console.log('Filtering by location: ' + value);
+    alert('Filtering results by location: ' + value);
+}
+
+function filterBySeason(value) {
+    console.log('Filtering by season: ' + value);
+    alert('Filtering results by season: ' + value);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Creating buttons
     const infoButton = document.createElement('button');
@@ -75,5 +91,24 @@ document.addEventListener('DOMContentLoaded', function() {
     bottomSection.appendChild(infoButton);
     bottomSection.appendChild(mapButton);
     bottomSection.appendChild(quizButton);
+
+    // Add event listeners for filter dropdowns
+    document.getElementById('dropdown1').addEventListener('change', function() {
+        if (this.value) {
+            filterBySkill(this.value);
+        }
+    });
+
+    document.getElementById('dropdown2').addEventListener('change', function() {
+        if (this.value) {
+            filterByLocation(this.value);
+        }
+    });
+
+    document.getElementById('dropdown3').addEventListener('change', function() {
+        if (this.value) {
+            filterBySeason(this.value);
+        }
+    });
 });
 
